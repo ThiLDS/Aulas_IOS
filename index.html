@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <style>
+        /* Estilo para centralizar e ajustar o tamanho dos itens do portfólio */
+        .portfolio {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .item {
+            width: 200px;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Ajuste do tamanho e estilo das imagens dos projetos */
+        .item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Estilo para o efeito de hover nos projetos */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            text-align: center;
+            padding: 10px;
+            pointer-events: none; /* Impede a sobreposição de bloquear o clique */
+        }
+
+        .item:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Estilo para o botão de voltar ao topo da página */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            font-size: 18px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+
+        /* Pop-up estilizado para confirmar envio do formulário */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #popup button {
+            background-color: white;
+            color: #4CAF50;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #popup button:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#trabalhos">Trabalhos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1> Olá, eu sou o Thiago</h1>
+            <p>Desenvolvedor Web</p>
+            <a href="#trabalhos" class="btn-primary">Meus Projetos</a>
+        </div>
+    </header>
+    
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p class="sobre-texto">
+            Meu nome é Thiago, tenho 23 anos e estou em constante desenvolvimento na área de programação. Atualmente, estou cursando **Programação WEB no IOS** e focado no aprendizado de Front-End, aprimorando minhas habilidades em HTML, CSS e JavaScript, além de explorar outras tecnologias. Tenho uma base sólida adquirida no curso de Análise e Desenvolvimento de Sistemas, o que me permite enfrentar novos desafios técnicos com confiança. Minha meta é evoluir como desenvolvedor e criar soluções eficientes para o mercado de tecnologia.
+        </p>
+    </section>
+    
+    
+
+    <!-- Seção de Trabalhos/Projetos -->
+    <section id="trabalhos">
+        <h2>Meus Projetos</h2>
+        <div class="portfolio">
+            <!-- Link para o repositório do projeto Python no GitHub -->
+            <div class="item">
+                <a href="https://github.com/ThiLDS/Prev-Tempo" target="_blank">
+                    <img src="py.png" alt="Trabalho 1">
+                </a>
+                <div class="overlay">
+                    <h3>Python Project</h3>
+                </div>
+            </div>
+
+            <!-- Link para o repositório do segundo projeto no GitHub -->
+            <div class="item">
+                <a href="https://github.com/ThiLDS/Rest-API-Aspnetcore" target="_blank">
+                    <img src="csharp.png" alt="Trabalho 2">
+                </a>
+                <div class="overlay">
+                    <h3>C# Project</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <form id="form-contato">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="popup">
+            <p>Contato enviado com sucesso!</p>
+            <button onclick="fecharPopup()">Fechar</button>
+        </div>
+    </section>
+
+    <!-- Botão de volta ao topo da página -->
+    <button id="back-to-top" onclick="voltarAoTopo()">&#8679;</button>
+
+    <footer>
+        <p>&copy; 2024 Thiago Portfólio</p>
+    </footer>
+
+    <script>
+        // Script para o envio do formulário e exibição do pop-up de confirmação
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('popup').style.display = 'block';
+        });
+
+        // Função para fechar o pop-up
+        function fecharPopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Script para o botão de voltar ao topo da página
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.getElementById('back-to-top').style.display = 'block';
+            } else {
+                document.getElementById('back-to-top').style.display = 'none';
+            }
+        };
+
+        // Função para rolar a página de volta ao topo
+        function voltarAoTopo() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
