@@ -21,7 +21,7 @@ let valorBooleano = true;
 
 console.log("O valor da variável booleana é:", valorBooleano);
 
-// -------------  EX  -----------
+// -------------  EX 4  -----------
 
 let numero = 3.1415;
 
