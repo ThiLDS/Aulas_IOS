@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+header {
+    background-color: #000;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1.5rem;
+}
+
+nav a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+}
+
+#hero {
+    background-color: #007aff;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+#hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.feature {
+    background-color: #333;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+#specs {
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+#specs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#purchase {
+    margin: 2rem 0;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007aff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
