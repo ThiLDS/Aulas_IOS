@@ -39,3 +39,23 @@ console.log(resultado);
 
 // -------------  Atividade 4 : EX 1 -----------
 
+var preco = 100; 
+var desconto = 0.2; 
+var precoFinal = preco - (preco * desconto);
+
+console.log("Preço final com desconto: R$", precoFinal);
+
+// -------------  Atividade 6 : EX 1 -----------
+
+var jogosFavoritos = ["The Last of Us", "God of War", "Minecraft", "Zelda", "Dark Souls"];
+var segundoJogo = jogosFavoritos[1].toUpperCase();
+
+console.log("Meu segundo jogo favorito em maiúsculas: " + segundoJogo);
+
+// -------------  Atividade 7 : EX 1 -----------
+
+var nomeCompletos = "Thiago Lopes";
+var partesNome = nomeCompletos.split(" ");
+var sobrenome = partesNome[1];
+
+console.log("Meu sobrenome é " + sobrenome + ".");
